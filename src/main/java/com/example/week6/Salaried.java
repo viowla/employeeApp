@@ -1,54 +1,58 @@
 package com.example.week6;
 
-public class Salaried implements Employee {
-    private String name;
-    private int id;
-    private int salary;
-    private int hourseWorked;
+public class Salaried extends Employee {
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setSalary(int salary) {
-        this.salary = salary;
-    }
-
-    public void setHourlyWorked(int hourseWorked) {
-        this.hourseWorked = hourseWorked;
-    }
-
-    @Override
-    public void setSales(int sales) {
-
+    public Salaried(String name, double fixedSalary, double hourRate, int hoursWorked, float commRate, EmployeeType emplType) {
+        super(name, fixedSalary, hourRate, hoursWorked, commRate, emplType);
     }
 
     @Override
     public String getName() {
-        return name;
+        return super.getName();
     }
 
     @Override
-    public int getSalary() {
-        return salary;
+    public void setName(String name) {
+        super.setName(name);
     }
 
     @Override
-    public int getHourly() {
-        return hourseWorked;
+    public double getFixedSalary() {
+        return super.getFixedSalary();
     }
 
-    public int getId() {
-        return id;
+    @Override
+    public void setFixedSalary(double fixedSalary) {
+        super.setFixedSalary(fixedSalary);
     }
 
-    public void setId(int id) {
-        this.id = id;
+    @Override
+    public double getHourRate() {
+        return super.getHourRate();
     }
 
-    public int getHourseWorked() {
-        return hourseWorked;
+    @Override
+    public void setHourRate(double hourRate) {
+        super.setHourRate(hourRate);
     }
 
+    @Override
+    public int getHoursWorked() {
+        return super.getHoursWorked();
+    }
 
+    @Override
+    public void setHoursWorked(int hoursWorked) {
+        super.setHoursWorked(hoursWorked);
+    }
+
+    @Override
+    public float getCommRate() {
+        return super.getCommRate();
+    }
+
+    @Override
+    public void setCommRate(float commRate) {
+        super.setCommRate(commRate);
+    }
 }

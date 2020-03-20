@@ -5,7 +5,7 @@ public class Payment {
 
     public void calculateSalary(){
         if (employee instanceof Salaried){
-            System.out.println("Total payment is: "+employee.getSalary() + employee.getSalary() * 0.10);
+            System.out.println("Total payment is: "+employee.getFixedSalary() + employee.getFixedSalary() * 0.10);
         }
     }
 

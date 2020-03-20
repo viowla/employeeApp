@@ -1,57 +1,72 @@
 package com.example.week6;
 
-public class Commission implements Employee {
+import org.springframework.data.annotation.Id;
+
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+
+public class Commission extends Employee {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
-    private int sales;
-    private int hourseWorked;
+    private double fixedSalary;
+    private double hourRate;
+    private int hoursWorked;
+    private float commRate;
 
-
-    public void setHourlyWorked(int hourseWorked) {
-        this.hourseWorked = hourseWorked;
+    public Commission(String name, double fixedSalary, double hourRate, int hoursWorked, float commRate, EmployeeType emplType) {
+        super(name, fixedSalary, hourRate, hoursWorked, commRate, emplType);
     }
 
-    public int getHourlyWorked() {
-        return hourseWorked;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    @Override
-    public void setSalary(int salary) {
-
-    }
-
-    public void setSales(int sales) {
-        this.sales = sales;
-    }
-
-    public int getSales() {
-        return sales;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     @Override
     public String getName() {
-        return name;
+        return super.getName();
     }
 
     @Override
-    public int getSalary() {
-        return 0;
+    public void setName(String name) {
+        super.setName(name);
     }
 
     @Override
-    public int getHourly() {
-        return hourseWorked;
+    public double getFixedSalary() {
+        return super.getFixedSalary();
+    }
+
+    @Override
+    public void setFixedSalary(double fixedSalary) {
+        super.setFixedSalary(fixedSalary);
+    }
+
+    @Override
+    public double getHourRate() {
+        return super.getHourRate();
+    }
+
+    @Override
+    public void setHourRate(double hourRate) {
+        super.setHourRate(hourRate);
+    }
+
+    @Override
+    public int getHoursWorked() {
+        return super.getHoursWorked();
+    }
+
+    @Override
+    public void setHoursWorked(int hoursWorked) {
+        super.setHoursWorked(hoursWorked);
+    }
+
+    @Override
+    public float getCommRate() {
+        return super.getCommRate();
+    }
+
+    @Override
+    public void setCommRate(float commRate) {
+        super.setCommRate(commRate);
     }
 }

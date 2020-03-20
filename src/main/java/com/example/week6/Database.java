@@ -1,3 +1,4 @@
+/*
 package com.example.week6;
 
 import org.springframework.beans.factory.annotation.Value;
@@ -35,3 +36,4 @@ public class Database {
         this.driverManagerDataSource = driverManagerDataSource;
     }
 }
+*/
