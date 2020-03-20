@@ -1,17 +1,85 @@
 package com.example.week6;
 
-public interface Employee {
-    public String getName();
 
-    public int getSalary();
+import org.springframework.data.annotation.Id;
 
-    public int getHourly();
+import javax.persistence.*;
 
-    public void setName(String name);
+@Entity
+public class Employee {
 
-    public void setSalary(int salary);
+    @javax.persistence.Id
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+    private String name;
+    private double fixedSalary;
+    private double hourRate;
+    private int hoursWorked;
+    private float commRate;
 
-    public void setHourlyWorked(int hourlyWorked);
+    @Enumerated(EnumType.STRING)
+    private EmployeeType emplType;
 
-    public void setSales(int sales);
+
+
+    public Employee(String name, double fixedSalary, double hourRate, int hoursWorked, float commRate, EmployeeType emplType){
+        this.commRate=commRate;
+        this.fixedSalary=fixedSalary;
+        this.hourRate=hourRate;
+        this.name=name;
+        this.hoursWorked=hoursWorked;
+        this.emplType=emplType;
+    }
+
+public Employee(){}
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getFixedSalary() {
+        return fixedSalary;
+    }
+
+    public void setFixedSalary(double fixedSalary) {
+        this.fixedSalary = fixedSalary;
+    }
+
+    public double getHourRate() {
+        return hourRate;
+    }
+
+    public void setHourRate(double hourRate) {
+        this.hourRate = hourRate;
+    }
+
+    public int getHoursWorked() {
+        return hoursWorked;
+    }
+
+    public void setHoursWorked(int hoursWorked) {
+        this.hoursWorked = hoursWorked;
+    }
+
+    public float getCommRate() {
+        return commRate;
+    }
+
+    public void setCommRate(float commRate) {
+        this.commRate = commRate;
+    }
+
+    public EmployeeType getEmplType() {
+        return emplType;
+    }
+
+    public void setEmplType(EmployeeType emplType) {
+        this.emplType = emplType;
+    }
 }
+
+
